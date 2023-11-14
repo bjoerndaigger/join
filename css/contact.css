@@ -132,7 +132,7 @@ h1 {
 
 #contactForm {
     overflow-y: auto;
-    max-height: 90vh; 
+    max-height: 95vh; 
 }
 
 .contact-selection-container {
@@ -675,9 +675,7 @@ h1 {
     }
 
     .big-letters {
-        height: 110px;
-        width: 110px;
-        font-size: 47px;
+        display: none;
     }
 
     .margin-letters {
@@ -791,9 +789,5 @@ h1 {
 
     .contact-input-field {
         width: 280px;
-    }
-
-    .big-letters {
-        display: none;
     }
 }

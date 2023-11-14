@@ -101,119 +101,115 @@
                 <img src="./assets/img/close-btn.png">
             </div>
             <div class="add-task-content">
+                <div class="headline">
+                    <h2>Add Task</h2>
+                </div>
                 <form onsubmit="createTask('to-do'); return false;">
-                    <div id="addTaskPageBody" class="addTaskPage">
-                        <div class="addTaskLR">
-                            <div class="addTaskLeft">
-                                <div class="center">
-                                    <div class="headline">
-                                        <h1>Add Task</h1>
-                                    </div>
-                                    <div class="titleContainer">
-                                        <label for="titleField" class="subHeadline">Title</label>
-                                        <input required name="titleField" id="titleField" type="text"
-                                            class="textAreaStyle1" placeholder="Enter a Title">
-                                    </div>
-                                    <div class="descriptionContainer">
-                                        <label for="descriptionField" class="subHeadline">Description</label>
-                                        <textarea required name="descriptionField" id="descriptionField"
-                                            class="textAreaStyle1" placeholder="Enter a description"></textarea>
-                                    </div>
-                                    <div class="contactContainer">
-                                        <label for="chooseContact" class="subHeadline">Assigned to</label>
-                                        <div class="add-task-dropdown">
-                                            <div class="add-task-dropdown-title" onclick="showContactList()">Select
-                                                contacts<img src="./assets/img/arrow_down.png" alt="Arrow Down"></div>
-                                            <div class="d-none" id="add-task-dropdown-content"></div>
+                    <div class="addTaskLR">
+                        <div class="addTaskLeft">
+                            <div class="titleContainer">
+                                <label for="titleField" class="subHeadline">Title *</label>
+                                <input required name="titleField" id="titleField" type="text" class="textAreaStyle"
+                                    placeholder="Enter a Title">
+                            </div>
+                            <div class="descriptionContainer">
+                                <label for="descriptionField" class="subHeadline">Description *</label>
+                                <textarea required name="descriptionField" id="descriptionField" class="textAreaStyle"
+                                    placeholder="Enter a description"></textarea>
+                            </div>
+                            <div class="contactContainer">
+                                <label for="chooseContact" class="subHeadline">Assigned to *</label>
+                                <div class="addTaskDropdown">
+                                    <div class="addTaskDropdownTitle" onclick="showContactList()">Select contacts<img
+                                            src="./assets/img/arrow_down.png" alt="Arrow Down"></div>
+                                    <div class="d-none" id="addTaskDropdownContent"></div>
+                                </div>
+                                <div id="alertContact" class="noSelectionAlert"></div>
+                            </div>
+                        </div>
+                        <div class="centerLine">
+                            <div class="dividingLine"></div>
+                        </div>
+                        <div class="addTaskRight">
+                            <div class="dateContainer">
+                                <label for="dueDateField" class="subHeadline">Due date *</label>
+                                <input required id="dueDateField" name="dueDateField" class="dueDateField" type="date">
+                            </div>
+                            <div class="priorityContainer">
+                                <label for="priority" class="subHeadline">Prio *</label>
+                                <div id="prioField" class="prio">
+                                    <label>
+                                        <div class="prioBtn">
+                                            <input required value="Urgent" type="radio" name="priority"
+                                                class="prioRadio">
+                                            <span>Urgent</span>
+                                            <img id="Urgent" src="./assets/img/prio-urgent.png">
                                         </div>
-                                        <div id="alertContact" class="noSelectionAlert"></div>
+                                    </label>
+                                    <label>
+                                        <div class="prioBtn">
+                                            <input value="Medium" type="radio" name="priority" class="prioRadio">
+                                            <span>Medium</span>
+                                            <img id="Medium" src="./assets/img/prio-medium.png">
+                                        </div>
+                                    </label>
+                                    <label>
+                                        <div class="prioBtn">
+                                            <input value="Low" type="radio" name="priority" class="prioRadio">
+                                            <span>Low</span>
+                                            <img id="Low" src="./assets/img/prio-low.png">
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="categoryContainer">
+                                <label for="chooseCategory" class="subHeadline">Category *</label>
+                                <div id="selectToInput">
+                                    <select name="chooseCategory" id="chooseCategory" class="selectInput"
+                                        onchange="addCategory()">
+                                        <option selected disabled>Choose Category</option>
+                                        <option value="NewCategory">New Category</option>
+                                    </select>
+                                </div>
+                                <div class="d-none" id="categoryColors">
+                                    <div class="categoryColor" id="1" style="background-color: #8aa4ff;"
+                                        onclick="selectCategoryColor('#8aa4ff');"></div>
+                                    <div class="categoryColor" id="2" style="background-color: #ff0000;"
+                                        onclick="selectCategoryColor('#ff0000');"></div>
+                                    <div class="categoryColor" id="3" style="background-color: #2ad300;"
+                                        onclick="selectCategoryColor('#2ad300');"></div>
+                                    <div class="categoryColor" id="4" style="background-color: #ff8a00;"
+                                        onclick="selectCategoryColor('#ff8a00');"></div>
+                                    <div class="categoryColor" id="5" style="background-color: #e200be;"
+                                        onclick="selectCategoryColor('#e200be');"></div>
+                                    <div class="categoryColor" id="6" style="background-color: #0038ff;"
+                                        onclick="selectCategoryColor('#0038ff');"></div>
+                                </div>
+                                <div id="alertCategory" class="noSelectionAlert"></div>
+                            </div>
+                            <div class="subtaskContainer">
+                                <label for="subtaskInput" class="subHeadline">Subtasks</label>
+                                <div id="subtaskField">
+                                    <div>
+                                        <input name="subtaskInput" id="subtaskInput" type="text"
+                                            placeholder="Add new Subtask">
+                                        <img onclick="addNewSubtask()" src="./assets/img/plus-icon.png">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <ul id="subtaskList"></ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="centerLine">
-                                <div class="dividingLine"></div>
-                            </div>
-                            <div class="addTaskRight">
-                                <div class="center">
-                                    <div class="dateContainer">
-                                        <label for="dueDateField" class="subHeadline">Due date</label>
-                                        <input required id="dueDateField" name="dueDateField" class="dueDateField"
-                                            type="date">
-                                    </div>
-                                    <div class="priorityContainer">
-                                        <label for="priority" class="subHeadline">Prio</label>
-                                        <div id="prioField" class="prio">
-                                            <label>
-                                                <div class="prioBtn">
-                                                    <input required value="Urgent" type="radio" name="priority"
-                                                        class="prioRadio">
-                                                    <span>Urgent</span>
-                                                    <img id="Urgent" src="./assets/img/prio-urgent.png">
-                                                </div>
-                                            </label>
-                                            <label>
-                                                <div class="prioBtn">
-                                                    <input value="Medium" type="radio" name="priority"
-                                                        class="prioRadio">
-                                                    <span>Medium</span>
-                                                    <img id="Medium" src="./assets/img/prio-medium.png">
-                                                </div>
-                                            </label>
-                                            <label>
-                                                <div class="prioBtn">
-                                                    <input value="Low" type="radio" name="priority" class="prioRadio">
-                                                    <span>Low</span>
-                                                    <img id="Low" src="./assets/img/prio-low.png">
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="categoryContainer">
-                                        <label for="chooseCategory" class="subHeadline">Category</label>
-                                        <div id="selectToInput">
-                                            <select name="chooseCategory" id="chooseCategory" class="selectInput"
-                                                onchange="addCategory()">
-                                                <option selected disabled>Choose Category</option>
-                                                <option value="NewCategory">New Category</option>
-                                            </select>
-                                        </div>
-                                        <div class="d-none" id="categoryColors">
-                                            <div class="categoryColor" id="1" style="background-color: #8aa4ff;"
-                                                onclick="selectCategoryColor('#8aa4ff');"></div>
-                                            <div class="categoryColor" id="2" style="background-color: #ff0000;"
-                                                onclick="selectCategoryColor('#ff0000');"></div>
-                                            <div class="categoryColor" id="3" style="background-color: #2ad300;"
-                                                onclick="selectCategoryColor('#2ad300');"></div>
-                                            <div class="categoryColor" id="4" style="background-color: #ff8a00;"
-                                                onclick="selectCategoryColor('#ff8a00');"></div>
-                                            <div class="categoryColor" id="5" style="background-color: #e200be;"
-                                                onclick="selectCategoryColor('#e200be');"></div>
-                                            <div class="categoryColor" id="6" style="background-color: #0038ff;"
-                                                onclick="selectCategoryColor('#0038ff');"></div>
-                                        </div>
-                                        <div id="alertCategory" class="noSelectionAlert"></div>
-                                    </div>
-                                    <div class="subtaskContainer">
-                                        <label for="subtaskInput" class="subHeadline">Subtasks</label>
-                                        <div id="subtaskField">
-                                            <div>
-                                                <input name="subtaskInput" id="subtaskInput" type="text"
-                                                    placeholder="Add new Subtask">
-                                                <img onclick="addNewSubtask()" src="./assets/img/plus-icon.png">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <ul id="subtaskList"></ul>
-                                        </div>
-                                    </div>
-                                    <div class="finishButtons" id="addTaskBTN">
-                                        <button class="light-btn" id="clearTaskButton"
-                                            onclick="resetForm()">Clear</button>
-                                        <button class="dark-btn" id="createTaskButton" type="submit">Create
-                                            Task</button>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+                    </div>
+                    <div class="formFooter">
+                        <div class="requiredNotice">* This field is required</div>
+                        <div class="finishButtons" id="addTaskBTN">
+                            <button class="light-btn" id="clearTaskButton" onclick="resetForm()">Clear</button>
+                            <button class="dark-btn" id="createTaskButton" type="submit">Create
+                                Task</button>
                         </div>
                     </div>
                 </form>

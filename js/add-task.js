@@ -267,7 +267,7 @@ function setContactOptions() {
  * Toggles the visibility of the contact list dropdown
  */
 function showContactList() {
-    let dropdownContent = document.getElementById('add-task-dropdown-content');
+    let dropdownContent = document.getElementById('addTaskDropdownContent');
     dropdownContent.innerHTML = '';
 
     if (dropdownContent.classList.contains('d-none')) {
@@ -286,7 +286,7 @@ function showContactListDropdown(dropdownContent) {
     for (let i = 0; i < contacts.length; i++) {
         const isChecked = contactValues.some(contact => contact.id === contacts[i].id) ? 'checked="checked"' : '';
         dropdownContent.innerHTML += /*html*/`
-        <div class="add-task-dropdown-content">
+        <div class="addTaskDropdownContent">
             <input type="checkbox" ${isChecked} id="contacts-${i}" onclick="selectContact(this, ${i})">
             <label for="contacts-${i}">${contacts[i].firstName} ${contacts[i].lastName}</label>
         </div>`;
@@ -299,7 +299,7 @@ function showContactListDropdown(dropdownContent) {
  * Hides the contact list dropdown
  */
 function hideContactListDropdown() {
-    let dropdownContent = document.getElementById('add-task-dropdown-content');
+    let dropdownContent = document.getElementById('addTaskDropdownContent');
     dropdownContent.classList.add('d-none');
 }
 

@@ -1,4 +1,408 @@
-body {
+.formContainer {
+  max-width: calc(1440px - 372px);
+  margin-top: 171px;
+  margin-left: 232px;
+  padding: 0 70px;
+}
+
+.d-none {
+  display: none;
+}
+
+.headline {
+  margin-bottom: 25px;
+}
+
+.addTaskLR {
+  display: flex;
+}
+
+.addTaskLeft {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.centerLine {
+  display: flex;
+  justify-content: center;
+  width: 10%;
+}
+
+.dividingLine {
+  border: 1px solid lightgrey;
+  height: 75%;
+}
+
+.addTaskRight {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.subHeadline {
+  margin-bottom: 6px;
+}
+
+.titleContainer,
+.descriptionContainer,
+.contactContainer,
+.dateContainer,
+.priorityContainer,
+.categoryContainer,
+.subtaskContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.textAreaStyle {
+  outline: 0;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  padding: 13px 21px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+/* Choose Contact */
+.addTaskDropdown {
+  font-family: inherit;
+  font-size: 16px;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  outline: transparent;
+  padding: 9px 21px;
+  background-color: white;
+}
+
+.addTaskDropdownTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0px;
+}
+
+.addTaskDropdownContent {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 4px 0px;
+}
+
+.requiredNotice {
+  font-size: 16px;
+}
+
+.dueDateField {
+  font-family: inherit;
+  font-size: 16px;
+  outline: 0;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  padding: 12px 21px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.prio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: inherit;
+  font-size: 16px;
+  gap: 4px;
+}
+
+.prio label {
+  display: flex;
+  width: 33.3%;
+}
+
+.prioBtn {
+  background-color: white;
+  border-radius: 10px;
+  padding: 4px 0px;
+  height: 38px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d1d1d1;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.prioBtn:hover {
+  transition: all 125ms ease-in-out;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.prioRadio {
+  margin-bottom: 2px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Choose Category  & Subtasks */
+.selectInput {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  display: inline-block;
+  padding: 14px 21px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 16px;
+  background: url("../assets/img/arrow_down.png") no-repeat right center;
+  background-position: calc(100% - 25px) center;
+  background-color: white !important;
+  cursor: pointer;
+}
+
+#categoryColors {
+  display: flex;
+  margin-top: 8px;
+}
+
+.categoryColor {
+  height: 15px;
+  width: 15px;
+  margin: 10px;
+  border-radius: 100%;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.categoryColorNew {
+  height: 15px;
+  width: 15px;
+  margin: 10px;
+  border: 1px solid transparent;
+}
+
+#selectedCategoryColor {
+  height: 20px;
+  width: 0px;
+}
+
+#chooseCategory {
+  color: black;
+}
+
+#categoryField div img {
+  border-left: 1px solid lightgrey;
+  height: 25px;
+  width: 25px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#subtaskField,
+#categoryField {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 16px;
+}
+
+#subtaskField div,
+#categoryField div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 21px;
+}
+
+#subtaskField input,
+#categoryField input {
+  font-family: inherit;
+  font-size: 16px;
+  border: 0;
+  outline: 0;
+  width: 90%;
+}
+
+#subtaskField div img {
+  height: 20px;
+  width: 20px;
+  padding: 13px 21px;
+  cursor: pointer;
+}
+
+#subtaskField span,
+#categoryField span {
+  padding: 5px 0 5px 21px;
+  border-top: 1px solid lightgrey;
+}
+
+.subtaskList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subtaskList img {
+  padding-right: 5px;
+  filter: invert(50%);
+  height: 20px;
+  cursor: pointer;
+}
+
+.formFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.noSelectionAlert {
+  font-size: 12px;
+  color: red;
+  margin-top: 4px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+}
+
+li {
+  font-size: 16px;
+}
+
+.task-added-msg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 74px;
+  padding: 0px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #2a3647 !important;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 23px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  animation: slideInFromBottom 1s forwards;
+  animation: slideInFromBottom 1s forwards, fadeOut 1s 2s forwards;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .addTaskLR {
+    flex-direction: column;
+  }
+
+  .addTaskLeft,
+  .addTaskRight {
+    width: 100%;
+  }
+  .centerLine {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .formContainer {
+    margin-top: 152px;
+    margin-left: 0;
+    margin-bottom: 80px;
+  }
+
+  .task-added-msg {
+    height: 74px;
+    padding: 0px 17px;
+    font-weight: 400;
+    font-size: 23px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .formContainer {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 47px;
+  }
+
+  .subtaskContainer {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .prio {
+    flex-direction: column;
+  }
+
+  .prio label {
+    width: 100%;
+  }
+
+  .formFooter {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-end;
+  }
+}
+
+@media (max-width: 480px){
+    .formContainer {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 380px) {
+    .formContainer {
+        padding: 0 30px;
+    }
+  h1 {
+    font-size: 36px;
+  }
+}
+/* body {
     margin: 0 !important;
     background-color: #F6F7F8;
     font-family: 'Inter', sans-serif !important;
@@ -64,7 +468,7 @@ body {
     margin-bottom: 25px;
 }
 
-.textAreaStyle1 {
+.textAreaStyle {
     outline: 0;
     border: 1px solid #D1D1D1;
     border-radius: 10px;
@@ -90,7 +494,6 @@ input,
     margin-top: 4px;
 }
 
-/*add task*/
 .addTaskLR {
     display: flex;
 }
@@ -179,7 +582,6 @@ input,
     color: black;
 }
 
-/* subtask and category fields */
 #subtaskField,
 #categoryField {
     border: 1px solid lightgrey;
@@ -238,7 +640,6 @@ input,
     cursor: pointer;
 }
 
-/* contact dropdown */
 .add-task-dropdown {
     border: 1px solid #d1d1d1;
     border-radius: 10px;
@@ -263,7 +664,6 @@ input,
     padding: 4px 0px;
 }
 
-/* add task page */
 .contactBubble {
     background-color: darkred;
     color: white;
@@ -415,9 +815,9 @@ li {
     body,
     input,
     option,
-    .textAreaStyle1,
+    .textAreaStyle,
     .dueDateField,
-    .add-task-dropdown {
+    .addTaskDropdown {
         font-size: 18px !important;
     }
 
@@ -448,7 +848,7 @@ li {
         width: 320px;
     }
 
-    .textAreaStyle1, .dueDateField {
+    .textAreaStyle, .dueDateField {
         width: calc(320px - 44px);
     }
 
@@ -497,7 +897,7 @@ li {
         width: 280px;
     }
 
-    .textAreaStyle1, .dueDateField {
+    .textAreaStyle, .dueDateField {
         width: calc(280px - 44px);
     }
 
@@ -521,4 +921,4 @@ li {
     .headline h1 {
         font-size: 36px;
     }
-}
+} */
