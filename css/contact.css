@@ -338,7 +338,7 @@ h1 {
 
 /* Input Form Overlay */
 .contact-form-overlay {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -519,7 +519,6 @@ h1 {
     .contact-list-container {
         height: unset;
         margin-bottom: 60px;
-        height: 100vh;
     }
 
     .contact-selection-container {
@@ -554,6 +553,11 @@ h1 {
         width: 104%;
         transform: translateX(100%);
         transition: all 250ms ease-in-out;
+        overflow-y: auto;
+    }
+
+    .contact-form-overlay {
+        left: 52%;
     }
 
     .close-btn-overlay {
@@ -654,7 +658,6 @@ h1 {
         border-top-right-radius: 30px;
         border-bottom-left-radius: unset;
         padding: 40px;
-        padding-bottom: 100px;
     }
 
     .contact-form-right {
@@ -667,11 +670,7 @@ h1 {
     }
 
     .contact-form-user-icon {
-        height: 125px;
-        width: 125px;
-        padding-left: 0 !important;
-        position: fixed;
-        top: 32%;
+       display: none;
     }
 
     .big-letters {
@@ -770,10 +769,6 @@ h1 {
 
     .prio-btn {
         font-size: 13px !important;
-    }
-
-    .contact-form-user-icon {
-        display: none;
     }
 
     .contact-form-left {

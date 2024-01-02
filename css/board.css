@@ -266,7 +266,11 @@ progress {
 }
 
 .popup-card-move-task {
-  margin-top: 5px;
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: auto;
 }
 
 .popup-card-move-task-mobile {
@@ -274,13 +278,11 @@ progress {
 }
 
 .move-task-btn {
-  height: 41px;
-  padding: 4px 18px;
+  padding: 4px 12px;
   border-radius: 8px;
   border: 1px solid #2a3647;
-  font-weight: 700;
   background-color: #ffffff;
-  font-size: 21px;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -481,6 +483,10 @@ progress {
   .add-task-container {
     width: 623px;
   }
+
+  .popup-card-move-task-mobile {
+    display: block;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -538,7 +544,7 @@ progress {
 
   .board-content {
     width: 360px;
-    margin: 0;
+    margin: 0 0 90px 0;
   }
 
   .card-container {
@@ -577,18 +583,6 @@ progress {
 
   .popup-card-assigned-to-container {
     margin-top: 10px;
-  }
-
-  .popup-card-move-task {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 5px;
-    height: auto;
-  }
-
-  .popup-card-move-task-mobile {
-    display: block;
   }
 
   .edit-task-title input,
