@@ -44,6 +44,7 @@ async function loadAddTaskData() {
     setMinDate();
 }
 
+
 /**
  * Loads tasks from the backend.
  */
@@ -139,12 +140,13 @@ function validateContacts() {
 }
 
 /**
- * Sets the minimum date for the date input element to the current date
+ * Sets the minimum date and the placeholder for the date input element to the current date
  */
 function setMinDate() {
     const today = new Date();
     const currentDate = today.toISOString().split('T')[0];
     document.getElementById("dueDateField").min = currentDate;
+    document.getElementById("dueDateField").value = currentDate; 
   }
 
 

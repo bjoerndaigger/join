@@ -381,6 +381,7 @@ function getInitials(firstName, lastName) {
 async function openAddTask(chosenStatus) {
     document.getElementById('add-task-overlay').classList.remove('d-none');
     status = chosenStatus;
+    setMinDate();
 }
 
 

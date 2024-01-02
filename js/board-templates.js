@@ -102,7 +102,7 @@ function editTaskHTML(taskIndex) {
         </div>
         <div class="edit-due-date margin-bottom-25">
             <p><b>Due date:</b></p> 
-            <input required id="input-date-edit-task" value="${tasks[taskIndex]['date']}" class="edit-task-input" type="date" placeholder="DD/MM/YYYY">
+            <input required id="input-date-edit-task" value="${tasks[taskIndex]['date']}" class="edit-task-input edit-due-date-input" type="date" placeholder="DD/MM/YYYY">
         </div>
         <div class="edit-priority margin-bottom-25">
             <label for="priority">

@@ -346,7 +346,6 @@ progress {
 /* edit task */
 .edit-task-title input,
 .edit-task-description input,
-.edit-due-date input,
 .edit-task-dropdown {
   width: calc(100% - 20px);
   padding: 12px 10px;
@@ -359,6 +358,17 @@ progress {
   margin-bottom: 4px;
   outline: transparent;
   font-size: 18px;
+}
+
+.edit-due-date-input {
+  width: calc(100% - 20px);
+  padding: 12px 10px;
+  font-family: inherit;
+  background-color: white;
+  -webkit-appearance: none; 
+  appearance: none; 
+  -moz-appearance: none; 
+  -webkit-padding: 12px 21px;
 }
 
 .edit-task-prio-container {
