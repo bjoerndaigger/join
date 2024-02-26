@@ -6,7 +6,7 @@
  */
 function tasksHTML(task) {
     return /*html*/ `
-    <div class="card-container margin-bottom-25" draggable="true" ondragstart="startDragging(${task['id']})" onclick="openPopupCard(${task['id']})">
+    <div class="card-container margin-bottom-25" draggable="true" ondragstart="startDragging(${task['id']})" onclick="openPopupCard(${task['id']}, event)">
         <div id ="card-category-${task.id}" class="card-category margin-bottom-10">${task['category']}</div>
         <div class="card-title margin-bottom-10">${task['title']}</div>
         <div class="card-description margin-bottom-10">${task['description']}</div>

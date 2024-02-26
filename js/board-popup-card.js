@@ -5,7 +5,8 @@ let selectedPriority;
  * Opens the popup card for a task
  * @param {number} taskIndex - The index of the task
  */
-function openPopupCard(taskIndex) {
+function openPopupCard(taskIndex, event) {
+    event.stopPropagation();
     document.getElementById('popup-card').classList.remove('d-none');
     generatePopupCardHTML(taskIndex);
     generatePopupCardCategoryColor(taskIndex);
